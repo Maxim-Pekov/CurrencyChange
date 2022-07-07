@@ -1,0 +1,15 @@
+{% load static %}      #Загружаем статику
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <!--	<link rel="stylesheet" href="{% static 'feedback/feedback.css' %}">   #ссылка на CSS	-->
+</head>
+<body>
+{% block content %}
+{% endblock %}
+
+</body>
+</html>		
