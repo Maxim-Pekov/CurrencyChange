@@ -1,28 +1,55 @@
-{% extends 'base.html' %}					
+{% extends 'base.html' %}
 					
 {% block title %}					
 Валюта
-{% endblock %}					
+{% endblock %}
 					
 {% block content %}					
 	<h2>сurrency_сonverter</h2>
 	<br>				
 	<div class="form-style">				
-		<form method="POST">			
-			{% csrf_token %}		
-			{% for field in form %}		
-				<div>	
-				<div>{{ field }}</div>
-				<div>	
-					
-					
-				</div>	
-				</div>	
-			{% endfor %}		
+		<form method="POST">
+			{% csrf_token %}
+			<label for="">Количество монет</label>
+			<br>
+			<input type="text" name="amount">
+			<br>
+			<div>
+				<div>
+					<label for="">Из валюты</label><br>
+					<select name="from_curr">
+						{% for from_curr in currency_codes %}
+						<option value='{{from_curr}}'>
+							{{from_curr}}
+						</option>{% endfor %}
+					</select>
+				</div>
+				<div>
+					<label for="">В валюту</label><br>
+					<select name="to_curr">
+						{% for to_curr in currency_codes %}
+						<option value="{{to_curr}}">
+							{{to_curr}}
+						</option>{% endfor %}
+					</select>
+				</div>
+			</div>
 			<br>		
 			<div>		
 				<button type="submit">Отправить</button>	
-			</div>		
+			</div>
+			<br>
+			<div>
+				{% if convert_amount %}
+					<div>
+						<p>Отдаем <b>{{from_cur}}</b></p>
+						<p>Получаем <b>{{to_cur}}</b></p>
+					</div>
+					<div>
+						{{convert_amount}}
+					</div>
+				{% endif %}
+			</div>
 		</form>			
 	</div>				
 {% endblock %}					

@@ -9,4 +9,4 @@ class Currency_converter(models.Model):
 
 
     def __str__(self):
-        return f'{self.currency_code} - {self.currency_name}'
+        return f'{self.currency_code}'
