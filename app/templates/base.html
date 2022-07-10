@@ -1,15 +1,27 @@
-<!--{% load static %}      #Загружаем статику-->
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %} {% endblock %}</title>
-    <!--	<link rel="stylesheet" href="{% static 'feedback/feedback.css' %}">   #ссылка на CSS	-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-{% block content %}
-{% endblock %}
+<div class="header">
+    {% block header %}
+    {% endblock %}
+</div>
+<div class="container">
 
+    <div class="row">
+    {% block content %}
+    {% endblock %}
+    </div>
+    <div class="row"></div>
+
+
+
+</div>
 </body>
 </html>		

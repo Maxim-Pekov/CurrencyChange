@@ -37,6 +37,8 @@ class Currency_converter_view(FormView):
             'amount': self.amount,
             'from_cur': self.from_cur,
             'to_cur': self.to_cur,
+            'from_c': dict_from_curr[1],
+            'to_c': dict_to_curr[1],
             'convert_amount': convert_amount
         }
         return render(request, 'сurrency_сonverter/index.html', context=context)
