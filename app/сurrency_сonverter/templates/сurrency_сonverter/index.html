@@ -5,17 +5,17 @@
 {% endblock %}
 
 {% block header %}
-<h2>сurrency_сonverter</h2>
+<h2>Конвертер валют</h2>
 {% endblock %}
 
 {% block content %}
+
 	<div class="form-style">
 		<form method="POST">
 			{% csrf_token %}
 			<div class="input_box">
-				<span class="sp">Количество монет</span>
 				<input type="text" name="amount" required="required">
-
+				<span class="sp">Количество монет</span>
 			</div>
 			<div class="row-2">
 				<div class="from">
@@ -39,7 +39,7 @@
 			</div>
 
 			<div class="from">
-				<button type="submit">Отправить</button>	
+				<button type="submit" class="joinBtn">Отправить</button>
 			</div>
 
 			<div class="to">
@@ -55,4 +55,4 @@
 			</div>
 		</form>			
 	</div>				
-{% endblock %}					
+{% endblock %}

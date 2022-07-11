@@ -11,6 +11,7 @@ from datetime import datetime
 import time
 from .forms import Currency_converter_form
 
+
 class Currency_converter_view(FormView):
     success_url = '/'
     amount = 0
