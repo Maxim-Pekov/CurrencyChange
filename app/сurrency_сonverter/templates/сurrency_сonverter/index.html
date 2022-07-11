@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+					
+{% block title %}					
+Валюта
+{% endblock %}
+
+{% block header %}
+<h2>Конвертер валют</h2>
+{% endblock %}
+
+{% block content %}
+
+	<div class="form-style">
+		<form method="POST">
+			{% csrf_token %}
+			<div class="input_box">
+				<input type="text" name="amount" required="required">
+				<span class="sp">Количество монет</span>
+			</div>
+			<div class="row-2">
+				<div class="from">
+					<label for="">Из валюты</label><br>
+					<select name="from_curr" value="{{from_cur}}">
+						{% for from_curr in currency_codes %}
+						<option value='{{from_curr}}' {% if from_cur == from_curr %}selected{% endif %}>
+							{{from_curr}}
+						</option>{% endfor %}
+					</select>
+				</div>
+				<div class="to">
+					<label for="">В валюту</label><br>
+					<select name="to_curr" value="{{to_cur}}>
+						{% for to_curr in currency_codes %}
+						<option value="{{to_curr}}" {% if to_cur == to_curr %}selected{% endif %}>
+							{{to_curr}}
+						</option>{% endfor %}
+					</select>
+				</div>
+			</div>
+
+			<div class="from">
+				<button type="submit" class="joinBtn">Отправить</button>
+			</div>
+
+			<div class="to">
+				{% if convert_amount %}
+					<div>
+						<p>Вы отдаете  <b> {{amount}} {{from_c}}</b></p>
+						<p>Вы получаете  <b> {{convert_amount}} {{to_c}}</b></p>
+					</div>
+					<div>
+
+					</div>
+				{% endif %}
+			</div>
+		</form>			
+	</div>				
+{% endblock %}

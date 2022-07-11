@@ -1,0 +1,127 @@
+header {
+  max-width: 350px;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  weight: 40px;
+  background: black;
+  max-width: 350px;
+    margin: 0 auto;
+}
+.container {
+  background-color: #eee;
+  max-width: 350px;
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-wrap: wrap;
+  max-width: 350px;
+  margin: 0 auto;
+  background: #1d2b3a;
+}
+.row > div {
+  padding: 15px;
+  margin: 0 auto;
+  background: #1d2b3a;
+  width: 300px;
+}
+h2 {
+  color: #fff;
+  margin: 0 auto;
+}
+.row-3{
+    margin: 0 auto;
+}
+.row-2 {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  height: 100%;
+  width: 100%;
+}
+.from, .to, .input_curr, .input_box {
+  width: 100%;
+  margin: 10px 0;
+  padding: 0 10px 0 0px;
+  max-width: 290px;
+}
+.input_curr {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.input_box {
+    position: relative;
+}
+.input_box input {
+    width: 100%;
+    padding: 10px 0;
+    max-width: 290px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255,255,0.25);
+    background: #1d2b3a;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.sp{
+    position: absolute;
+    left: 50px;
+    top: 0px;
+    padding: 10px 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgba(255,255,255,0.25);
+    text-transform: uppercase;
+
+}
+.sp:hover {
+    left: 100px;
+    top: 100px;
+    }
+
+.input:focus ~ .sp
+{
+    color: #00dfc4;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+}
+select {
+    width: 100%;
+    padding: 10px 0 10px 0;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255,255,0.25);
+    background: #1d2b3a;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+}
+button {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 290px;
+    width: 100%;
+    padding: 10px 0;
+    max-width: 290px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255,255,0.25);
+    background: #1d2b3a;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+}
+button:hover {
+    background-color: bisque;
+}
+label, p {
+    color: #fff;
+}
